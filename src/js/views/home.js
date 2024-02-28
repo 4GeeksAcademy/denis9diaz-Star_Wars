@@ -1,50 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../styles/home.css";
-import Sidebar from './Sidebar';
-import Cards from './Cards';
+import People from './People';
+import Planets from './Planets';
+import Starships from './Starships';
 
 export const Home = () => {
-	const [selectedOption, setSelectedOption] = useState("characters");
-	const [cardInfo, setCardInfo] = useState([])
+    const [peopleInfo, setPeopleInfo] = useState([]);
+    const [planetsInfo, setPlanetsInfo] = useState([]);
+    const [starshipsInfo, setStarshipsInfo] = useState([]);
 
-	const urlStarWars = ""
+    useEffect(() => {
+        fetch("https://www.swapi.tech/api/people")
+            .then(response => response.json())
+            .then(data => setPeopleInfo(data.results))
+            .catch(error => error);
 
-	fetch(urlStarWars)
-	.then(response => response.json())
-	.then(data => {
-	  setCardInfo(data)
-	})
-	.catch(err => err)
+        fetch("https://www.swapi.tech/api/planets")
+            .then(response => response.json())
+            .then(data => setPlanetsInfo(data.results))
+            .catch(error => error);
 
-	const OptionSelect = (option) => {
-		setSelectedOption(option);
-	};
+        fetch("https://www.swapi.tech/api/starships")
+            .then(response => response.json())
+            .then(data => setStarshipsInfo(data.results))
+            .catch(error => error);
+    }, []);
 
-	return (
-		<div className='container'>
-			<div className="container border-bottom border-top border-secondary mb-5 mt-5">
-				<nav className="navbar-databank">
-					<div className="container-fluid">
-						<span className="navbar-brand">BROWSE DATABANK //</span>
-					</div>
-				</nav>
-			</div>
-			<div className="container row">
-				<div className="col-md-3">
-					<Sidebar onSelect={OptionSelect}/>
-				</div>
-				<div className="col-md-9">
-				{cardInfo.map((card, index) => (
-					<Cards 
-					option={selectedOption}
-					key={index}
-					id={card.id}
-					name={card.name}
-					description={card.description}
-					/>
-				))}
-				</div>
-			</div>
-		</div>
-	);
+    return (
+        <div className="container">
+            {peopleInfo.map((person, index) => (
+                <People
+                    key={index}
+                    id={person.id}
+                    name={person.name}
+                />
+            ))}
+
+            {planetsInfo.map((planet, index) => (
+                <Planets
+                    key={index}
+                    id={planet.id}
+                    name={planet.name}
+                />
+            ))}
+
+            {starshipsInfo.map((starship, index) => (
+                <Starships
+                    key={index}
+                    id={starship.id}
+                    name={starship.name}
+                />
+            ))}
+        </div>
+    );
 };
