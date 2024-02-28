@@ -18,4 +18,3 @@ const SingleCard = () => {
 
 export default SingleCard;
 
-
