@@ -20,3 +20,4 @@ const People = (props) => {
 };
 
 export default People;
+
