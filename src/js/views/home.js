@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import "../../styles/home.css";
 import Sidebar from './Sidebar';
-import DescriptionCard from './DescriptionCard';
+import Cards from './Cards';
 
 export const Home = () => {
 	const [selectedOption, setSelectedOption] = useState("characters");
+	const [cardInfo, setCardInfo] = useState([])
+
+	const urlStarWars = ""
+
+	fetch(urlStarWars)
+	.then(response => response.json())
+	.then(data => {
+	  setCardInfo(data)
+	})
+	.catch(err => err)
 
 	const OptionSelect = (option) => {
 		setSelectedOption(option);
@@ -19,14 +29,20 @@ export const Home = () => {
 					</div>
 				</nav>
 			</div>
-			<div className="container">
-				<div className="row">
-					<div className="col-md-3">
-						<Sidebar onSelect={OptionSelect} />
-					</div>
-					<div className="col-md-9">
-						<DescriptionCard option={selectedOption} />
-					</div>
+			<div className="container row">
+				<div className="col-md-3">
+					<Sidebar onSelect={OptionSelect}/>
+				</div>
+				<div className="col-md-9">
+				{cardInfo.map((card, index) => (
+					<Cards 
+					option={selectedOption}
+					key={index}
+					id={card.id}
+					name={card.name}
+					description={card.description}
+					/>
+				))}
 				</div>
 			</div>
 		</div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function DescriptionCard({ option }) {
-    const descriptions = {
+const Cards = (option) => {
+    const principal = {
         characters: [
             { id: 1, name: 'Persona 1', description: 'Descripción de la persona 1' }
         ],
@@ -14,15 +14,15 @@ function DescriptionCard({ option }) {
         ],
     };
 
-    const createDescriptionCards = () => {
-        const items = descriptions[option].map((item) => (
-            <div className="card" key={item.id}>
+    const individualCard = () => {
+        const items = principal[option].map((card) => (
+            <div className="card" key={card.id}>
                 <img src="..." className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">{item.description}</p>
+                    <h5 className="card-title">{card.name}</h5>
+                    <p className="card-text">{card.description}</p>
                     <div className="d-flex justify-content-between">
-                        <Link to={`/individual/${item.id}`}>
+                        <Link to={`/individual/${card.id}`}>
                             <button className="btn btn-primary">Learn more</button>
                         </Link>
                         <button className="btn btn-outline-warning align-self-end"><i className="fa-regular fa-heart"></i></button>
@@ -37,9 +37,9 @@ function DescriptionCard({ option }) {
     return (
         <div>
             <h3>Description</h3>
-            {createDescriptionCards()}
+            {individualCard()}
         </div>
     );
 }
 
-export default DescriptionCard;
+export default Cards;
