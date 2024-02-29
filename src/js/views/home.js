@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/home.css";
-import People from './People';
-import Planets from './Planets';
-import Starships from './Starships';
+import CustomCard from './CustomCard';
 
 export const Home = () => {
     const [peopleInfo, setPeopleInfo] = useState([]);
@@ -35,10 +33,12 @@ export const Home = () => {
                 <div className="content-container">
                     <div className="content">
                         {peopleInfo.map((person, index) => (
-                            <People
+                            <CustomCard
                                 key={index}
                                 id={person.id}
                                 name={person.name}
+                                type="people"
+                                index={index + 1}
                             />
                         ))}
                     </div>
@@ -51,10 +51,12 @@ export const Home = () => {
                 <div className="content-container">
                     <div className="content">
                         {planetsInfo.map((planet, index) => (
-                            <Planets
+                            <CustomCard
                                 key={index}
                                 id={planet.id}
                                 name={planet.name}
+                                type="planet"
+                                index={index + 1}
                             />
                         ))}
                     </div>
@@ -67,10 +69,12 @@ export const Home = () => {
                 <div className="content-container">
                     <div className="content">
                         {starshipsInfo.map((starship, index) => (
-                            <Starships
+                            <CustomCard
                                 key={index}
                                 id={starship.id}
                                 name={starship.name}
+                                type="starship"
+                                index={index + 1}
                             />
                         ))}
                     </div>
