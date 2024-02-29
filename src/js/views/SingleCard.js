@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 
 const SingleCard = () => {
+    const { id } = useParams();
+    const urlPeople = `https://www.swapi.tech/api/people/${id}`
+    const urlPlanets = `https://www.swapi.tech/api/planets/${id}`
+    const urlStarships = `https://www.swapi.tech/api/starships/${id}`
+
+    useEffect(() => {
+        fetch(urlPeople)
+            .then(response => response.json())
+            .then((data) => { data })
+            .catch(error => error);
+    }, [urlPeople]);
+
+    useEffect(() => {
+        fetch(urlPlanets)
+            .then(response => response.json())
+            .then((data) => { data })
+            .catch(error => error);
+    }, [urlPlanets]);
+
+    useEffect(() => {
+        fetch(urlStarships)
+            .then(response => response.json())
+            .then((data) => { data })
+            .catch(error => error);
+    }, [urlStarships]);
 
     return (
-        <div className="card translucent-card">
-            <img src="" className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title"></h5>
-                <div className="d-flex justify-content-between">
-                    <button className="custom-btn btn-1">Read More</button>
-                    <button className="bookmarkBtn align-self-end">
-                        <span className="IconContainer">
-                            <svg viewBox="0 0 384 512" height="0.9em" class="icon">
-                                <path
-                                    d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
-                                ></path>
-                            </svg>
-                        </span>
-                        <p className="text"></p>
-                    </button>
-                </div>
+        <div className="container individual-info">
+            <div className="row">
+                <div className="col">Columna 1</div>
+                <div className="col">Columna 2</div>
             </div>
+            <div className="row">
+                <div className="col">Columna 1</div>
+                <div className="col">Columna 2</div>
+                <div className="col">Columna 3</div>
+                <div className="col">Columna 4</div>
+                <div className="col">Columna 5</div>
+            </div>
+            <Link to="/">
+                <p>Back home</p>
+            </Link>
         </div>
     );
 };
