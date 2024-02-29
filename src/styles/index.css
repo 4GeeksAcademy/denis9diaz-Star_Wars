@@ -29,17 +29,113 @@ body {
   border-radius: 10px;
 }
 
-.btn-outline-warning.align-self-end {
+.align-self-end {
     margin-left: auto;
+    border: none;
+    background: transparent;
 }
+
+.bookmarkBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgb(88, 91, 0), #FFC107);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 90px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 400;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+ }
+ 
+ .btn-1 {
+  background: rgb(96,9,240);
+  background: linear-gradient(0deg, rgb(124, 126, 15) 0%, #FFC107 100%);
+  border: none;
+ }
+ 
+ .btn-1:before {
+  height: 0%;
+  width: 2px;
+ }
+ 
+ .btn-1:hover {
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+               -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+     inset -4px -4px 6px 0 rgba(255,255,255,.2),
+     inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+ }
+ 
 
 .browse {
     color: rgb(160, 160, 160);
     font-size: 15px;
-}
-
-.title {
-  margin-bottom: 10px;
 }
 
 .section {
@@ -49,6 +145,8 @@ body {
 .title {
   margin-bottom: 10px;
   margin-top: 40px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  
 }
 
 .content {
@@ -74,5 +172,12 @@ body {
 
 .principal {
   margin-left: 30px;
+}
+
+.card-title {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+  font-size: 24px;
 }
 
