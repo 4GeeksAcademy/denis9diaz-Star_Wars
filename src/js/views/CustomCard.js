@@ -10,7 +10,7 @@ const CustomCard = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <div className="d-flex justify-content-between">
-                    <Link to={`/individual/${props.id}`}>
+                    <Link to={`/individual/${props.type}/${props.id}`}>
                         <button className="custom-btn btn-1">Read More</button>
                     </Link>
                     <button className="bookmarkBtn align-self-end">
