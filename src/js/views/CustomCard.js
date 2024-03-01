@@ -1,8 +1,14 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 
 const CustomCard = (props) => {
     const imageUrl = `https://starwars-visualguide.com/assets/img/${props.type}s/${props.index}.jpg`;
+    const { actions } = useContext(Context);
+
+    const favorite = () => {
+        actions.addToFavorites(props.item); 
+    };
 
     return (
         <div className="card translucent-card" key={props.id}>
@@ -13,7 +19,7 @@ const CustomCard = (props) => {
                     <Link to={`/individual/${props.type}/${props.id}`}>
                         <button className="custom-btn btn-1">Read More</button>
                     </Link>
-                    <button className="bookmarkBtn align-self-end">
+                    <button className="bookmarkBtn align-self-end" onClick={favorite}>
                         <span className="IconContainer">
                             <svg viewBox="0 0 384 512" height="0.9em" class="icon">
                                 <path

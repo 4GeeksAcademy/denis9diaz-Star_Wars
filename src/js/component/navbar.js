@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import StarWars from "/src/img/StarWars.png";
+import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+    const { store, actions } = useContext(Context);
     return (
         <nav className="navbar mb-3">
             <Link to="/">
@@ -11,7 +13,14 @@ export const Navbar = () => {
                 </span>
             </Link>
             <div className="ml-auto">
-                <button className="shadow__btn">Favorites</button>
+                <div className="dropdown">
+                    <button className="shadow__btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Favorites <span className="badge badge-pill badge-primary">{store.favorites.length}</span>
+                    </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        
+                    </div>
+                </div>
             </div>
         </nav>
     );
