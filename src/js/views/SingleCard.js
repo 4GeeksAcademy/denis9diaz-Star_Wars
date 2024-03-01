@@ -18,16 +18,9 @@ const SingleCard = () => {
             <div className="row">
                 <div className="col image"><img src={imageUrl} className="card-img-top" alt="..." /></div>
                 <div className="col individual-text">
-                    <p className="name">{info.name}</p>
-                    <p className="description"></p>
+                    <h2 className="name">{info.name}</h2>
+                    <p className="properties">{info.properties}</p>
                 </div>
-            </div>
-            <div className="row">
-                <div className="col">Columna 1</div>
-                <div className="col">Columna 2</div>
-                <div className="col">Columna 3</div>
-                <div className="col">Columna 4</div>
-                <div className="col">Columna 5</div>
             </div>
             <Link to="/">
                 <p>Back home</p>
