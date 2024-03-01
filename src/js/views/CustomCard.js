@@ -3,20 +3,25 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
 const CustomCard = (props) => {
-    const imageUrl = `https://starwars-visualguide.com/assets/img/${props.type}s/${props.index}.jpg`;
+    const types = { people: "characters", planet: "planets", starship: "starships" }
+    const imageUrl = `https://starwars-visualguide.com/assets/img/${types[props.type]}/${props.index}.jpg`;
+    console.log(props.type, props.index)
     const { actions } = useContext(Context);
 
     const favorite = () => {
-        actions.addToFavorites(props.item); 
+        actions.addToFavorites(props.item);
     };
 
     return (
         <div className="card translucent-card" key={props.id}>
-            <img src={imageUrl} className="card-img-top" alt="..." />
+            <img src={imageUrl} className="card-img-top" alt="..." onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+            }} />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <div className="d-flex justify-content-between">
-                    <Link to={`/individual/${props.type}/${props.id}`}>
+                    <Link to={`/individual/${props.type}/${props.index}`}>
                         <button className="custom-btn btn-1">Read More</button>
                     </Link>
                     <button className="bookmarkBtn align-self-end" onClick={favorite}>

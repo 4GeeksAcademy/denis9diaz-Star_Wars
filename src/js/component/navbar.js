@@ -9,7 +9,7 @@ export const Navbar = () => {
         <nav className="navbar mb-3">
             <Link to="/">
                 <span className="navbar-brand mb-0 h1">
-                    <img src={StarWars} alt="Star Wars Logo" className="mr-2" style={{ height: '60px' }} />
+                    <img src={StarWars} alt="Star Wars Logo" className="mr-2" style={{ height: '70px' }} />
                 </span>
             </Link>
             <div className="ml-auto">
@@ -18,7 +18,7 @@ export const Navbar = () => {
                         Favorites <span className="badge badge-pill badge-primary">{store.favorites.length}</span>
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        
+                        {store.favorites.map((favorites) => { favorites.name })}
                     </div>
                 </div>
             </div>

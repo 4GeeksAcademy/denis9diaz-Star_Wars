@@ -201,3 +201,18 @@ body {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
   font-size: 24px;
 }
+
+.individual-text {
+  font-family: "Oswald", sans-serif;
+  color: rgb(228, 228, 146);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.properties-card {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.badge {
+  font-size: 18px;
+}
