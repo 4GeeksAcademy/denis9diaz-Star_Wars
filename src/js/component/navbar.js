@@ -7,11 +7,11 @@ export const Navbar = () => {
         <nav className="navbar mb-3">
             <Link to="/">
                 <span className="navbar-brand mb-0 h1">
-                    <img src={StarWars} alt="Star Wars Logo" className="mr-2" style={{ height: '50px' }} />
+                    <img src={StarWars} alt="Star Wars Logo" className="mr-2" style={{ height: '60px' }} />
                 </span>
             </Link>
             <div className="ml-auto">
-                <button type="button" className="btn btn-warning">Favorites</button>
+                <button className="shadow__btn">Favorites</button>
             </div>
         </nav>
     );

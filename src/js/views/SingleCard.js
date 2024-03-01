@@ -1,38 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const SingleCard = () => {
-    const { id } = useParams();
-    const urlPeople = `https://www.swapi.tech/api/people/${id}`
-    const urlPlanets = `https://www.swapi.tech/api/planets/${id}`
-    const urlStarships = `https://www.swapi.tech/api/starships/${id}`
+    const [info, setInfo] = useState({});
+    const { id, type } = useParams();
+    const imageUrl = `https://starwars-visualguide.com/assets/img/${type}s/${id}.jpg`;
 
     useEffect(() => {
-        fetch(urlPeople)
+        fetch(`https://www.swapi.tech/api/${type}/${id}`)
             .then(response => response.json())
-            .then((data) => { data })
+            .then(data => setInfo(data.result))
             .catch(error => error);
-    }, [urlPeople]);
-
-    useEffect(() => {
-        fetch(urlPlanets)
-            .then(response => response.json())
-            .then((data) => { data })
-            .catch(error => error);
-    }, [urlPlanets]);
-
-    useEffect(() => {
-        fetch(urlStarships)
-            .then(response => response.json())
-            .then((data) => { data })
-            .catch(error => error);
-    }, [urlStarships]);
+    }, [id, type]);
 
     return (
         <div className="container individual-info">
             <div className="row">
-                <div className="col">Columna 1</div>
-                <div className="col">Columna 2</div>
+                <div className="col image"><img src={imageUrl} className="card-img-top" alt="..." /></div>
+                <div className="col individual-text">
+                    <p className="name">{info.name}</p>
+                    <p className="description"></p>
+                </div>
             </div>
             <div className="row">
                 <div className="col">Columna 1</div>
