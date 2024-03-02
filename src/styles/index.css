@@ -204,8 +204,9 @@ body {
 }
 
 .individual-text {
+  margin-top: 20px;
   font-family: "Oswald", sans-serif;
-  color: rgb(228, 228, 146);
+  color: #FFCA2C;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
@@ -216,4 +217,10 @@ body {
 
 .badge {
   font-size: 18px;
+}
+
+.col.image img {
+  margin-top: 20px;
+  border: 4px solid #FFCA2C; /* Borde amarillo */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Sombra amarilla */
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-const SingleCard = (props) => {
+const SingleCard = () => {
     const types = { people: "characters", planet: "planets", starship: "starships" }
     const [info, setInfo] = useState({});
     const { id, type } = useParams();
