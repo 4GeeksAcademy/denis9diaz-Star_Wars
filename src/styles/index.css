@@ -38,6 +38,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
+  padding-top: 80px;
 }
 
 .translucent-card {

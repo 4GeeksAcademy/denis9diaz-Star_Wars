@@ -44,10 +44,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const favorites = [...store.favorites, item];
 				setStore({ favorites: favorites });
 			},
-			removeFromFavorites: itemId => {
+			removeFromFavorites: index => {
 				const store = getStore();
-				const favorites = store.favorites.filter(item => item.id !== itemId);
-				setStore({ favorites: favorites });
+				const updatedFavorites = store.favorites.filter((item, i) => i !== index);
+				setStore({ favorites: updatedFavorites });
 			}
 		}
 	};

@@ -9,7 +9,7 @@ const CustomCard = (props) => {
     const { actions } = useContext(Context);
 
     const favorite = () => {
-        actions.addToFavorites(props.item);
+        actions.addToFavorites(props);
     };
 
     return (
