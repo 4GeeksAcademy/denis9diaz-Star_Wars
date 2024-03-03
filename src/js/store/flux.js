@@ -39,11 +39,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
+
 			addToFavorites: item => {
 				const store = getStore();
 				const favorites = [...store.favorites, item];
 				setStore({ favorites: favorites });
 			},
+			
 			removeFromFavorites: index => {
 				const store = getStore();
 				const updatedFavorites = store.favorites.filter((item, i) => i !== index);
