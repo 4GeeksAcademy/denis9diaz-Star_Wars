@@ -15,7 +15,7 @@ const SingleCard = () => {
     }, [id, type]);
 
     const properties = () => {
-        if (type == "planet") {
+        if (type == "planets") {
             return (
                 <div className="properties-card">
                     <p className="diameter"><u>Diameter:</u> {info.diameter}</p>

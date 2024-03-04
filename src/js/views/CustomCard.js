@@ -15,7 +15,7 @@ const CustomCard = (props) => {
     return (
         <div className="card translucent-card" key={props.id}>
             <img src={imageUrl} className="card-img-top" alt="..." onError={({ currentTarget }) => {
-                currentTarget.onerror = null; // prevents looping
+                currentTarget.onerror = null;
                 currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
             }} />
             <div className="card-body">
