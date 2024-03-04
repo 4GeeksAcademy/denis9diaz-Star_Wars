@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
 const CustomCard = (props) => {
-    const types = { people: "characters", planet: "planets", starship: "starships" }
+    const types = { people: "characters", planets: "planets", starships: "starships" }
     const imageUrl = `https://starwars-visualguide.com/assets/img/${types[props.type]}/${props.index}.jpg`;
     console.log(props.type, props.index)
     const { actions } = useContext(Context);

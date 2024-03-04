@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const SingleCard = () => {
-    const types = { people: "characters", planet: "planets", starship: "starships" }
+    const types = { people: "characters", planets: "planets", starships: "starships" }
     const [info, setInfo] = useState({});
     const { id, type } = useParams();
     const imageUrl = `https://starwars-visualguide.com/assets/img/${types[type]}/${id}.jpg`;

@@ -55,7 +55,7 @@ export const Home = () => {
                                 key={index}
                                 id={planet.id}
                                 name={planet.name}
-                                type="planet"
+                                type="planets"
                                 index={index + 1}
                             />
                         ))}
@@ -73,7 +73,7 @@ export const Home = () => {
                                 key={index}
                                 id={starship.id}
                                 name={starship.name}
-                                type="starship"
+                                type="starships"
                                 index={index + 1}
                             />
                         ))}
