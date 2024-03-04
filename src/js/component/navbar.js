@@ -7,7 +7,7 @@ export const Navbar = () => {
     const { store, actions } = useContext(Context);
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    const toggleDropdown = () => {
+    const dropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
@@ -19,7 +19,7 @@ export const Navbar = () => {
                 </span>
             </Link>
             <div className="ml-auto">
-                <div className="dropdown" onClick={toggleDropdown}>
+                <div className="dropdown" onClick={dropdown}>
                     <button className="shadow__btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded={dropdownOpen ? "true" : "false"}>
                         Favorites <span className="badge badge-pill badge-primary">{store.favorites.length}</span>
                     </button>

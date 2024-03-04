@@ -18,34 +18,33 @@ const SingleCard = () => {
         if (type == "planet") {
             return (
                 <div className="properties-card">
-                    <p className="diameter">Diameter: {info.diameter}</p>
-                    <p className="rotation_period">Rotation Period: {info.rotation_period}</p>
-                    <p className="orbital_period">Orbital Period: {info.orbital_period}</p>
-                    <p className="population">Population: {info.population}</p>
-                    <p className="climate">Climate: {info.climate}</p>
-                    <p className="terrain">Terrain: {info.terrain}</p>
-                    <p className="mass">Mass: {info.mass}</p>
+                    <p className="diameter"><u>Diameter:</u> {info.diameter}</p>
+                    <p className="rotation_period"><u>Rotation Period:</u> {info.rotation_period}</p>
+                    <p className="orbital_period"><u>Orbital Period:</u> {info.orbital_period}</p>
+                    <p className="population"><u>Population:</u> {info.population}</p>
+                    <p className="climate"><u>Climate:</u> {info.climate}</p>
+                    <p className="terrain"><u>Terrain:</u> {info.terrain}</p>
                 </div>
             )
         } else if (type == "people") {
             return (
                 <div className="properties-card">
-                    <p className="birth_year">Birth Year: {info.birth_year}</p>
-                    <p className="eye_color">Eye Color: {info.eye_color}</p>
-                    <p className="gender">Gender: {info.gender}</p>
-                    <p className="hair_color">Hair color: {info.hair_color}</p>
-                    <p className="height">Height: {info.height}</p>
-                    <p className="homeworld">Home World: {info.homeworld}</p>
-                    <p className="mass">Mass: {info.mass}</p>
+                    <p className="birth_year"><u>Birth Year:</u> {info.birth_year}</p>
+                    <p className="eye_color"><u>Eye Color:</u> {info.eye_color}</p>
+                    <p className="gender"><u>Gender:</u> {info.gender}</p>
+                    <p className="hair_color"><u>Hair color:</u> {info.hair_color}</p>
+                    <p className="height"><u>Height:</u> {info.height}</p>
+                    <p className="homeworld"><u>Home World:</u> {info.homeworld}</p>
+                    <p className="mass"><u>Mass:</u> {info.mass}</p>
                 </div>
             )
         } else {
             return (
                 <div className="properties-card">
-                    <p className="model">Model: {info.model}</p>
-                    <p className="starship_class">Starship Class: {info.starship_class}</p>
-                    <p className="manufacturer">Manufacturer: {info.manufacturer}</p>
-                    <p className="length">Length: {info.length}</p>
+                    <p className="model"><u>Model:</u> {info.model}</p>
+                    <p className="starship_class"><u>Starship Class:</u> {info.starship_class}</p>
+                    <p className="manufacturer"><u>Manufacturer:</u> {info.manufacturer}</p>
+                    <p className="length"><u>Length:</u> {info.length}</p>
                 </div>
             )
         }
